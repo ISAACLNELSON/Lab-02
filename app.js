@@ -40,7 +40,7 @@ Horn.prototype.render = function(){
   $('select').append($newOption);
   
 }
-//more dropdown stuff
+//more dropdown stufff
 
   // filtering the images handler
   $('select').on('change', function() {
