@@ -3,11 +3,11 @@
 ## Display images
 ETA: 1 hour
 
-Start time:
+Start time: 10:00
 
-End time:
+End time: 10:27
 
-Actual time used:
+Actual time used: 27 minutes
 
 
 
