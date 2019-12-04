@@ -10,6 +10,7 @@ function Horn(hornObj){
   this.keyword = hornObj.keyword;
   this.horns = hornObj.horns;
 
+
   hornPics.push(this);
 }
 
@@ -31,12 +32,13 @@ Horn.prototype.render = function(){
   $('main').append($newSection);
   
   //dropdown stuff
-  $newOption.attr('value', this.title);
+  $newOption.attr('value', this.keyword);
+  $newOption.attr('class', this.keyword);
   $newOption.text(this.title);
   
   
   $('select').append($newOption);
-
+  // console.log(this)
 }
 //more dropdown stuff
 
@@ -44,7 +46,9 @@ Horn.prototype.render = function(){
   $('select').on('change', function() {
     console.log("clicked")
   $('main').hide();
-  console.log(this);
+  $('.')
+  // let hornsOnDom = $('main').find('keyword');
+  console.log(this.value);
   })
 
 
