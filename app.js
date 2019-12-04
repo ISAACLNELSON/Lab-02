@@ -38,7 +38,7 @@ Horn.prototype.render = function(){
   
   
   $('select').append($newOption);
-  // console.log(this)
+  
 }
 //more dropdown stuff
 
