@@ -16,7 +16,7 @@ function Horn(hornObj){
 Horn.prototype.render = function(){
   //make a template :)
   const hornTemplate = $('#photo-template').html();
-
+  const $newOption = $('<option></option>');
   const $newSection = $('<section></section>');
 
   $newSection.html(hornTemplate);
@@ -26,8 +26,27 @@ Horn.prototype.render = function(){
   $newSection.find('img').attr('alt', this.title);
   $newSection.find('p').text(this.description);
 
+  $newSection.attr('class', this.keyword);
+  
   $('main').append($newSection);
+  
+  //dropdown stuff
+  $newOption.attr('value', this.title);
+  $newOption.text(this.title);
+  
+  
+  $('select').append($newOption);
+
 }
+//more dropdown stuff
+
+  // filtering the images handler
+  $('select').on('change', function() {
+    console.log("clicked")
+  $('main').hide();
+  console.log(this);
+  })
+
 
 $.get('data/page-1.json', data => {
   data.forEach((hornObj) => {
