@@ -30,6 +30,8 @@ End time: 1:42
 
 Actual time used: 20 minutes
 
+# Lab-03
+
 ## Pagination
 
 ETA: 1 hour
@@ -45,6 +47,26 @@ Actual time used: 9 minutes
 ETA: 2 hour
 
 Start time: 9:59
+
+End time: 
+
+Actual time used: 
+
+## Styling with Flexbox
+
+ETA: 1 hour
+
+Start time: 10:00
+
+End time: 11:00
+
+Actual time used: 1 hour 
+
+## Sort images
+
+ETA: 1 hour
+
+Start time: 
 
 End time: 
 

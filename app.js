@@ -39,21 +39,73 @@ Horn.prototype.render = function () {
   $newOption.text(this.title);
 
 
-  $('select').append($newOption);
+  $('#filter').append($newOption);
 
 }
 //more dropdown stufff
 
 // filtering the images handler
-$('select').on('change', function () {
+$('#filter').on('change', function () {
   console.log("clicked")
   $('section').hide();
   $(`.${this.value}`).show();
   console.log();
 });
 
+$('#sort').on('change', function () {
+  console.log("clicked")
+  console.log();
+  //on click, hide section
+  $('section').hide();
+  // re-get json filter appropriately 
+  if(this.value === 'horns'){
+    $.get('data/page-1.json', data => {
+      data.sort((a, b) => {
+        if(a.horns > b.horns){
+          return -1
+        } else if(a.horns < b.horns){
+          return 1
+        } else {
+          return 0
+        }
+      });
+      data.forEach((hornObj) => {
+        hornPics.push(hornObj.keyword);
+        new Horn(hornObj).render();
+      });
+    });
+  } else if (this.value === 'title'){
+    $.get('data/page-1.json', data => {
+      data.sort((a, b) => {
+        if(a.title > b.title){
+          return 1
+        } else if(a.title < b.title){
+          return -1
+        } else {
+          return 0
+        }
+      });
+      data.forEach((hornObj) => {
+        hornPics.push(hornObj.keyword);
+        new Horn(hornObj).render();
+      });
+    });
+  }
+  }); 
+ 
+
 
 $.get('data/page-1.json', data => {
+  data.sort((a, b) => {
+    if(a.horns > b.horns){
+      return 1
+    } else if(a.horns < b.horns){
+      return -1
+    } else {
+      return 0
+    }
+  });
+
   data.forEach((hornObj) => {
     hornPics.push(hornObj.keyword);
     new Horn(hornObj).render();
