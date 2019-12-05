@@ -13,12 +13,16 @@ img{
 main {
   max-width: 1260px;
   float: left;
+  justify-content: space-evenly;
 }
 section {
-  margin-left: 3px;
+  margin-left: 10px;
   margin-bottom: 3px;
-  width: fit-content;
+  width: 150px;
   height: fit-content;
   float: left;
+  padding-left: 5px;
+  padding-right: 5px;
   background-color: rgb(24, 24, 24);
+
 }

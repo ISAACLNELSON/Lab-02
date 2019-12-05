@@ -3,7 +3,7 @@
 
 const hornPics = [];
 
-function Horn(hornObj){
+function Horn(hornObj) {
   this.title = hornObj.title;
   this.image_url = hornObj.image_url;
   this.description = hornObj.description;
@@ -11,13 +11,13 @@ function Horn(hornObj){
   this.horns = hornObj.horns;
 
 
-  hornPics.push(this);
+  
 }
 
-Horn.prototype.render = function(){
+Horn.prototype.render = function () {
   //make a template :)
   const hornTemplate = $('#photo-template').html();
-  const $newOption = $('<option></option>');
+  const $newOption = $(`<option>${this.title}</option>`);
   const $newSection = $('<section></section>');
 
   $newSection.html(hornTemplate);
@@ -28,32 +28,32 @@ Horn.prototype.render = function(){
   $newSection.find('p').text(this.description);
 
   $newSection.attr('class', this.keyword);
-  
+
   $('main').append($newSection);
-  
+
   //dropdown stuff
   $newOption.attr('value', this.keyword);
   $newOption.attr('class', this.keyword);
   $newOption.text(this.title);
-  
-  
+
+
   $('select').append($newOption);
-  
+
 }
 //more dropdown stufff
 
-  // filtering the images handler
-  $('select').on('change', function() {
-    console.log("clicked")
-  $('main').hide();
-  $('.')
-  // let hornsOnDom = $('main').find('keyword');
-  console.log(this.value);
-  })
+// filtering the images handler
+$('select').on('change', function () {
+  console.log("clicked")
+  $('section').hide();
+  $(`.${this.value}`).show();
+  console.log();
+});
 
 
 $.get('data/page-1.json', data => {
   data.forEach((hornObj) => {
+    hornPics.push(hornObj.keyword);
     new Horn(hornObj).render();
-  })
-})
+  });
+});

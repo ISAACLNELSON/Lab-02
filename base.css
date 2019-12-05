@@ -1,3 +1,9 @@
 * {
     font-family: 'Metal Mania', cursive;
+    max-width: 500px;
+}
+
+@media (min-width: 600px) {
+* {max-width: 960px;
+}
 }
