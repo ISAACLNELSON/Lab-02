@@ -30,3 +30,22 @@ End time: 1:42
 
 Actual time used: 20 minutes
 
+## Pagination
+
+ETA: 1 hour
+
+Start time: 9:50
+
+End time: 9:59
+
+Actual time used: 9 minutes
+
+## Templating
+
+ETA: 2 hour
+
+Start time: 9:59
+
+End time: 
+
+Actual time used: 

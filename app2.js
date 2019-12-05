@@ -1,33 +1,31 @@
 'use strict';
 
 
-const hornPics = [];
+const moreHornPics = [];
 
-function Horn(hornObj) {
-  this.title = hornObj.title;
-  this.image_url = hornObj.image_url;
-  this.description = hornObj.description;
-  this.keyword = hornObj.keyword;
-  this.horns = hornObj.horns;
+function moreHorn(moreHornObj) {
+  this.title = moreHornObj.title;
+  this.image_url = moreHornObj.image_url;
+  this.description = moreHornObj.description;
+  this.keyword = moreHornObj.keyword;
+  this.moreHorns = moreHornObj.moreHorns;
 
 
   
 }
 
-Horn.prototype.render = function () {
+moreHorn.prototype.render = function () {
   //make a template :)
-  const hornTemplate = $('#photo-template').html();
-  
+  const moreHornTemplate = $('#photo-template').html();
   const $newOption = $(`<option>${this.title}</option>`);
-  
   const $newSection = $('<section></section>');
 
-  $newSection.html(hornTemplate);
-  //rip jquery :(
+  $newSection.html(moreHornTemplate);
+
   $newSection.find('h2').text(this.title);
   $newSection.find('img').attr('src', this.image_url);
-  $newSection.find('p').text(this.description);
   $newSection.find('img').attr('alt', this.title);
+  $newSection.find('p').text(this.description);
 
   $newSection.attr('class', this.keyword);
 
@@ -53,9 +51,9 @@ $('select').on('change', function () {
 });
 
 
-$.get('data/page-1.json', data => {
-  data.forEach((hornObj) => {
-    hornPics.push(hornObj.keyword);
-    new Horn(hornObj).render();
+$.get('data/page-2.json', data => {
+  data.forEach((moreHornObj) => {
+    moreHornPics.push(moreHornObj.keyword);
+    new moreHorn(moreHornObj).render();
   });
 });

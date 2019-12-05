@@ -1,4 +1,6 @@
-footer {
+
+#photo-template {
+  visibility: hidden;
   position: fixed;
-  top: 97%; left: 83%;
+  top: 0%;
 }
